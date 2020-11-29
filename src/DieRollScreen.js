@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, View, StyleSheet, TextInput  } from "react-native";
+import { Button, View, StyleSheet, TextInput, Text, ScrollView  } from "react-native";
 
 let dieNumber=0;
 let drop=0;
@@ -12,6 +12,7 @@ export default class DieRollScreen extends Component {
       const {navigate} = this.props.navigation;
       return (
       <View style={styles.container}>
+        <ScrollView>
         <TextInput
           style={styles.textInputStyle}
           numeric
@@ -19,7 +20,7 @@ export default class DieRollScreen extends Component {
           keyboardType={'numeric'}
           onChangeText={text => dieNumber=text}
         />
-        <p></p>
+        <Text> </Text>
         <TextInput
           style={styles.textInputStyle}
           numeric
@@ -27,43 +28,44 @@ export default class DieRollScreen extends Component {
           keyboardType={'numeric'}
           onChangeText={text => drop=text}
         />
-        <p>size of the die</p>
+        <Text> </Text>
         <Button
             title="d4"
             onPress={() => alert(dieRollFunction(4))}
             color="#2b1d0e"
         />
-        <p></p>
+        <Text> </Text>
         <Button
             title="d6"
             onPress={() => alert(dieRollFunction(6))}
             color="#2b1d0e"
         />
-         <p></p>
+         <Text> </Text>
         <Button
             title="d10"
             onPress={() => alert(dieRollFunction(10))}
             color="#2b1d0e"
         />
-         <p></p>
+        <Text> </Text>
         <Button
             title="d12"
             onPress={() => alert(dieRollFunction(12))}
             color="#2b1d0e"
         />
-         <p></p>
+         <Text> </Text>
         <Button
             title="d20"
             onPress={() => alert(dieRollFunction(20))}
             color="#2b1d0e"
             containerViewStyle={{width: '100%', marginLeft: 0}}
         />
-         <p></p>
+         <Text> </Text>
        <Button
             title="d100"
             onPress={() => alert(dieRollFunction(100))}
             color="#2b1d0e"
         />
+      </ScrollView>
       </View>
       );
     }

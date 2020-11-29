@@ -15,7 +15,7 @@ akkor az eredmény javul eggyel
 Kritikus bukás->Bukás, Bukás->Siker, Siker->Kritikus siker
 */
 import React, { Component } from "react";
-import { Button, View, StyleSheet, TextInput  } from "react-native";
+import { Button, View, StyleSheet, TextInput,ScrollView  } from "react-native";
 
 let modifier=0;
 let targetNumber=0;
@@ -28,6 +28,7 @@ export default class PathFinderScreen extends Component {
       const {navigate} = this.props.navigation;
       return (
       <View style={styles.container}>
+      <ScrollView>
         <TextInput
           style={styles.textInputStyle}
           numeric
@@ -47,6 +48,7 @@ export default class PathFinderScreen extends Component {
             onPress={() => alert(calculate())}
             color="#2b1d0e"
         />
+      </ScrollView>
       </View>
       );
     }
